@@ -1,0 +1,155 @@
+/* Import the Cantarell font */
+@font-face {
+  font-family: 'Cantarell';
+  src: url('path/to/cantarell/font/file.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Define theme colors using GTK named colors */
+:root {
+  --color-background: @define-color theme_bg_color;
+  --color-background-navbar: @define-color theme_bg_color;
+  --color-text-default: @define-color theme_fg_color;
+  --color-text-muted: @define-color insensitive_fg_color;
+  --color-text-link: @define-color theme_selected_bg_color;
+}
+
+/* Set default font and colors for the body */
+body {
+  font-family: 'Cantarell', sans-serif;
+  background-color: @define-color theme_bg_color;
+  color: @define-color theme_fg_color;
+}
+
+/* Style the main app container and header */
+.app, .header-main {
+  background-color: @define-color theme_bg_color;
+}
+
+/* Style the main content columns */
+.column-left, .column-middle, .column-right {
+  box-shadow: 0px 0px 4px @define-color wm_shadow;
+  border-color: @define-color borders;
+}
+
+/* Style message headers */
+.message_header {
+  background-color: @define-color theme_bg_color;
+  border-color: @define-color borders;
+}
+
+.message_header_private_message .message-header-contents {
+  background-color: shade(@define-color theme_bg_color, 0.9);
+  border-color: @define-color borders;
+}
+
+/* Style message content */
+.messagebox .rendered_markdown {
+  font-size: 11pt;
+  font-weight: 400;
+}
+
+.messagebox .rendered_markdown code {
+  font-family: monospace, monospace;
+}
+
+/* Style the compose textarea */
+#compose-textarea {
+  background-color: @define-color text_view_bg;
+  color: @define-color theme_fg_color;
+  border-color: @define-color borders;
+}
+
+/* Style buttons */
+button {
+  color: @define-color theme_fg_color;
+  outline-color: alpha(@define-color theme_fg_color, 0.3);
+  border-color: @define-color borders;
+  border-bottom-color: shade(@define-color borders, 0.7);
+  background-image: linear-gradient(to top, shade(@define-color theme_bg_color, 1.1) 2px, @define-color theme_bg_color);
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.834353);
+  box-shadow: inset 0 1px rgba(255, 255, 255, 0.02), 0 1px 2px rgba(0, 0, 0, 0.07);
+}
+
+/* Style selected elements */
+.selected {
+  background-color: @define-color theme_selected_bg_color;
+  color: @define-color theme_selected_fg_color;
+}
+
+/* Style stream headers */
+.stream-header {
+  font-size: 15pt;
+  font-weight: 700;
+  color: @define-color theme_fg_color;
+}
+
+/* Style topic headers */
+.topic-header {
+  font-size: 20pt;
+  font-weight: 800;
+  color: @define-color theme_fg_color;
+}
+
+/* Style date rows */
+.date_row {
+  background-color: @define-color theme_unfocused_bg_color;
+  color: @define-color insensitive_fg_color;
+  border-color: @define-color unfocused_borders;
+}
+
+/* Style message feed recipient rows */
+.message-feed .recipient_row {
+  background-color: @define-color theme_bg_color;
+  border-color: @define-color borders;
+}
+
+.private-message .recipient_row {
+  background-color: shade(@define-color theme_bg_color, 0.9);
+}
+
+/* Style message controls */
+.message_controls .message_control_button {
+  color: @define-color theme_fg_color;
+}
+
+.message_control_button:hover {
+  color: @define-color theme_selected_bg_color;
+}
+
+/* Style popup menus */
+.popup_menu {
+  background-color: @define-color theme_base_color;
+  border-color: @define-color borders;
+  color: @define-color theme_text_color;
+}
+
+.popup_menu .active a {
+  background-color: @define-color theme_selected_bg_color;
+  color: @define-color theme_selected_fg_color;
+}
+
+/* Style modal dialogs */
+.modal__content {
+  background-color: @define-color theme_bg_color;
+  border-color: @define-color borders;
+}
+
+.modal__footer {
+  background-color: shade(@define-color theme_bg_color, 0.95);
+  border-color: @define-color borders;
+}
+
+.modal__close::before {
+  color: @define-color theme_fg_color;
+}
+
+.modal__close:hover {
+  background-color: alpha(@define-color theme_fg_color, 0.1);
+}
+
+/* Style loading indicators */
+.loading_indicator_spinner path {
+  fill: @define-color theme_selected_bg_color;
+}
